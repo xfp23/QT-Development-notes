@@ -18,6 +18,10 @@
 [信号槽机制](./SIGNAL/SIG.MD)
 
 
+## Timer定时器
+
+[定时器应用](./Timer/TIMER.MD)
+
 ## 编译与部署（如 windeployqt、Qt for Embedded）
 [部署创建应用程序](./DEPLOY/DEPLOY.MD)
 
