@@ -17,6 +17,10 @@
 
 [信号槽机制](./SIGNAL/SIG.MD)
 
+
+## 编译与部署（如 windeployqt、Qt for Embedded）
+[部署创建应用程序](./DEPLOY/DEPLOY.MD)
+
 ## 读写串口
 
 [UART的发送与接收](./UART/UART.MD)
@@ -63,8 +67,6 @@
 
 [跨不同平台构建应用程序](./VERSION/Version.MD)
 
-## 编译与部署（如 windeployqt、Qt for Embedded）
-[部署创建应用程序](./DEPLOY/DEPLOY.MD)
----
 
-你可以在这些标题下根据实际需要详细补充内容。
+
+
