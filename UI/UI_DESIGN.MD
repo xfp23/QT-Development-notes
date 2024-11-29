@@ -76,3 +76,20 @@ img.load("image path");
 ui->label->setPixmap(QPixmap::formImage(img));
 
 ```
+
+
+
+## 设置应用程式图标
+
+1. 在自己的项目工程中添加`.ico`图标文件，必须是有效的`ico`文件，可以通过工具生成
+
+- [图像转ico网站](https://www.ico51.cn/)
+
+- [获取ico网站](https://www.iconfont.cn/)
+
+- 不用敲代码
+
+
+# 设计菜单栏
+
+1. 在ui布局界面找到
