@@ -97,3 +97,77 @@ ui->label->setPixmap(QPixmap::formImage(img));
 2. 输入`(&F)`可显示字母带下划线的(F),其它也一样
 
 3. 创建完之后双击已经创建过的，点击`添加分隔符`,可以创建其它选项
+
+
+4. 添加菜单的槽函数(菜单不能自动生成槽函数，得自己connect()一个) 
+
+- [此处可查看QT自带的信号机制](/SIGNAL/SIGNAL/SIGNAL_EX.MD)
+
+```cpp
+
+/**
+*@brief 连接菜单栏的信号
+*@param 具体的菜单
+*@param 发出的信号类型 & QAction::triggred
+*@param 处理的对象
+*@param 回调函数 (槽函数)
+*/
+connect(ui->newAction,&QAction::triggred,this,callback);
+```
+
+这样就能触发动作了
+
+## 设置窗口标题
+
+```cpp
+// MainWindow类
+
+this->setWindowTitle("新建文本文档");
+```
+
+# 打开选择文件的选项框
+
+- 包含头文件
+
+```cpp
+
+#include <QFileDialog>
+#include <QMessageBox>
+
+```
+- 选择文件
+
+```cpp
+
+/**
+ * @brief 打开一个文件选择对话框
+ * @param parent 当前操作的对象指针（通常是父窗口）
+ * @param title 对话框的标题
+ * @param directory 默认打开的文件路径
+ * @param filter 可选择的文件类型过滤器
+ * @return 返回用户选择的文件路径，如果未选择文件则返回空字符串
+ */
+QString fileName = QFileDialog::getOpenFileName(this, "选择一个文件", QCoreApplication::applicationFilePath(), "*.cpp");
+
+//检查文件名是否为空
+// return 空返回true ， 非空返回false
+fileName.isEmpty();
+
+// 弹出一个警告信息
+// @param 父窗口
+// @param 窗口警告标题
+// 输出的警告信息
+QMessageBox::warning(this,"警告","请选择一个文件");
+```
+
+- 打开文件
+
+```cpp
+
+QFile file(filename); // 文件对象,传递要打开的文件名
+file.open(QIODevice::ReadOnly); // 只读模式打开文件
+QByteArray ba = file.readALL(); // 读取文件
+ui->textEdit->setText(QString(ba)); // 在ui显示文件
+file.close(); // 关闭文件
+
+```
