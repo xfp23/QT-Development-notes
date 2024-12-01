@@ -121,6 +121,36 @@ file.close();
 
 ---
 
+# 文本流形式保存文件
+
+```cpp
+
+QByteArray logBuffer;
+
+// 获取文件路径
+// applicationDirPath方法是获取当前的文件夹路径？？不确定
+QString filePath = QCoreApplication::applicationDirPath() + ".csv";
+
+QFile file(filePath);
+
+// 未知行为，gpt也没给注释，跟个傻逼一样
+if(!file.open(QIODevice::Append | QIODevice::Text))
+{
+    QMessageBox::warning(this, "错误", "无法打开日志文件进行保存！");
+    return ;
+}
+
+// 创建文本流
+QTextStream out(&file);
+
+// 将字节数据转换成字符串，写入到文件
+out << QString::fromUtf8(logBuffer); // 使用UTF8编码
+
+file.close();
+
+logBuffer.clear();
+```
+
 ### 完整代码示例
 
 #### 打开文件
