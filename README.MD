@@ -16,6 +16,15 @@
 
 [QT框架](./FRAME/qtframe.MD)
 
+
+## 添加三方库到QT
+
+[添加三方库](./INCLUDE_LIB/ADDLIB.MD)
+
+## 添加多媒体资源到QT工程
+
+[添加媒体资源](./INCLUDE_MUL/MUL.MD)
+
 ## 信号与槽机制
 
 [信号槽机制](./SIGNAL/SIG.MD)
@@ -78,6 +87,6 @@
 
 [跨不同平台构建应用程序](./VERSION/Version.MD)
 
-
-
+- 作者写的库
+- [lib](./lib)
 
