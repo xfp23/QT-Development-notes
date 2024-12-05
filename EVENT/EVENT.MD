@@ -34,13 +34,21 @@ QT 常用的事件：
 
 - 事件是写虚函数event来实现的
 
+- 实例：创建一个键盘按键事件
 ```cpp
-bool MainWindow::event(QEvent * event)
+
+class MainWindow {
+    public:
+    void keyPressEvent(QKEvent *);// 重写此虚函数
+
+};
+
+void MainWindow::keyPressEvent(QKeyEvent *key)
 {
-    // 比较是否是自己想要的事件
-    if(event->type() == QEvent::Timer)
+    // 获取热键                                      获取普通按键
+    if(key->modifiers() == Qt::ControlModifier &&  key->key() == Qt::Key_S)
     {
-        // 自己想处理的事情
+
     }
 }
 ```
