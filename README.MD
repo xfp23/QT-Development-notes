@@ -8,7 +8,7 @@
 # Qt 开发编程指南
 
 
-# c++ 语法基础
+## c++ 语法基础
 
 [c++语法](./CPP/CPP.MD)
 
@@ -84,6 +84,11 @@
 
 ## 网络通信与 Web 服务（如 RESTful API）
 [Web](./WEB/WEB.MD)
+
+## 启动新窗口
+
+[QT启动新窗口](./UI/NEWWINDOW/newWindow.MD)
+
 
 ## 版本控制与跨平台构建
 
