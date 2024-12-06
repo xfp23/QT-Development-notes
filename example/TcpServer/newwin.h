@@ -17,6 +17,9 @@ public:
     explicit newWin(QTcpSocket *s,QWidget *parent = 0);
     ~newWin();
 
+public slots:
+    void on_lineEdit_cursorPositionChanged(int arg1, int arg2);
+    void sigsolt(QString data);
 private:
     Ui::newWin *ui;
     QTcpSocket * server;

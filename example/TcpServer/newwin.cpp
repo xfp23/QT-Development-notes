@@ -7,9 +7,23 @@ newWin::newWin(QTcpSocket *s, QWidget *parent) :
 {
     ui->setupUi(this);
     server = s;
+//ui->lineEdit();
 }
 
 newWin::~newWin()
 {
     delete ui;
+}
+
+
+
+void newWin::on_lineEdit_cursorPositionChanged(int arg1, int arg2)
+{
+
+}
+
+
+void newWin::sigsolt(QString data )
+{
+    ui->lineEdit->setText(data);
 }
