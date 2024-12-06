@@ -32,11 +32,11 @@
 - 更改类
 
 ```cpp
-class M_Thread : public QObject,public QThread
+class M_Thread : public QThread
 {
     Q_OBJECT
 public:
-    explicit M_Thread(QObject *parent = nullptr);
+    explicit M_Thread();
 
 signals:
 
@@ -45,3 +45,31 @@ public slots:
 
 ```
 
+
+2. 重写`run()`函数
+
+- 1. run()函数是个虚函数，在此处被重写，我们程序中不需要调用它，它是线程启动后自动被执行的
+```cpp
+
+void M_Thread::run()
+{
+    qDebug() << "run fuction Trigger";
+    connect(socket,&QTcpSocket::readyRead,this,&M_Thread::ThreadRun); // 连接合适的槽函数
+//    connect(socket,&QTcpSocket::disconnected,[=](){
+//        this->exit();
+//    });
+
+}
+
+```
+
+- 3. 启动线程
+
+- 设定合理的逻辑来启动自己的线程
+
+```cpp
+
+M_Thtrad  * = new M_Thtrad(/*填写自己写的需要传递的参数*/);
+this->start();
+
+```
